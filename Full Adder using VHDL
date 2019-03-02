@@ -1,0 +1,17 @@
+library IEEE; 
+use IEEE.STD_LOGIC_1164.all;
+entity fulla_ent is
+	 port(
+		 a : in STD_LOGIC;
+		 b : in STD_LOGIC;
+		 c : in STD_LOGIC;
+		 sum : out STD_LOGIC;
+		 cout : out STD_LOGIC
+	     );
+end fulla_ent;
+
+architecture fulla_arc of fulla_ent is
+begin
+        sum<=((not((a and (not b)) or ((not a) and b))and c)or (((a and (not b)) or ((not a) and b))and (not c)));
+	      cout<= (a and b) or (a and c) or (b and c);
+end fulla_arc;
