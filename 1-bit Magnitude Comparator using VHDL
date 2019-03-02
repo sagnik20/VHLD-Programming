@@ -1,0 +1,22 @@
+library IEEE;
+
+use IEEE.STD_LOGIC_1164.all;
+
+entity 1_bit is
+	 port(
+		 a : in STD_LOGIC;
+		 b : in STD_LOGIC;
+		 equal : out STD_LOGIC;
+		 greater : out STD_LOGIC;
+		 less : out STD_LOGIC
+	     );
+end 1_bit;
+
+
+architecture arc_1_bit of 1_bit is
+begin
+
+	equal <=a xnor b;
+	less <= (not a) and b;
+	greater <= a and (not b)
+end arc_1_bit;
