@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+entity halfa_ent is
+	 port(
+		 a : in STD_LOGIC;
+		 b : in STD_LOGIC;
+		 sum : out STD_LOGIC;
+		 carry : out STD_LOGIC
+	     );
+end halfa_ent;
+
+architecture halfa_arc of halfa_ent is
+begin
+sum<=((a and not b) or (not a and b));
+	carry <= a and b;
+
+end halfa_arc;
