@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+entity mux is
+	 port(
+		 a : in STD_LOGIC_VECTOR(7 downto 0);
+		 b : in STD_LOGIC_VECTOR(2 downto 0);
+		 c : out STD_LOGIC
+	     );
+end mux;
+
+architecture arc_mux of mux is
+begin
+	
+	process (a,b)
+	begin 
+		case b is
+			when "000"=>c<=a(0); 
+			when "001"=>c<=a(1);
+			when "010"=>c<=a(2);
+			when "011"=>c<=a(3);
+			when "100"=>c<=a(4);
+			when "101"=>c<=a(5);
+			when "110"=>c<=a(6);
+			when "111"=>c<=a(7);
+			when others=>null;
+		end case;
+		end process;
+end arc_mux;
