@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity xor_gate is
+	 port(
+		 a : in STD_LOGIC;
+		 b : in STD_LOGIC;
+		 c : out STD_LOGIC
+	     );
+end xor_gate;
+
+
+
+architecture xor_gate of xor_gate is
+begin
+
+
+	c<=((a and (not b))or ((not a) and b));
+
+end xor_gate;
