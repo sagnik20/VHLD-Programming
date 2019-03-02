@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity And is
+	 port(
+		 a : in STD_LOGIC;
+		 b : in STD_LOGIC;
+		 c : out STD_LOGIC
+	     );
+end And;
+
+
+
+architecture Arc_and of And is
+begin
+
+	-- enter your statements here --
+	c<= a and b;
+
+end Arc_and;
