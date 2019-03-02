@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+entity behaviour is
+	 port(
+		 d : in STD_LOGIC_VECTOR(7 downto 0);
+		 y : out STD_LOGIC_VECTOR(2 downto 0)
+	     );
+end behaviour;
+
+architecture priority_enc of behaviour is
+begin
+process(d)
+	begin
+		if (d(7)='1') 
+			then y<="111"; 
+		elsif (d(6)='1') 
+			then y<="110";
+		elsif (d(5)='1') 
+			then y<="101";
+		elsif (d(4)='1') 
+			then y<="100";
+		elsif (d(3)='1') 
+			then y<="011";
+		elsif (d(2)='1') 
+			then y<="010";
+		elsif (d(1)='1') 
+			then y<="001";
+		elsif (d(0)='1') 
+			then y<="000";
+		end if;
+		end process;
+
+end priority_enc;
